@@ -1,8 +1,9 @@
 import torch.nn as nn
 from typing import List
+from SequentialNet.sequentialnet.base_model import BaseModel
 
 
-class MultiLayerPerceptron(nn.Module):
+class MultiLayerPerceptron(BaseModel):
     """
     MultiLayerPerceptron defines a multi-layer perceptron with a dynamic number of layers.
 
@@ -17,7 +18,6 @@ class MultiLayerPerceptron(nn.Module):
                  input_size: int,
                  hidden_layer_size: List[int],
                  output_size: int,
-                 learning_rate: float,
                  output_activation: nn.Module = None) -> None:
         super(MultiLayerPerceptron, self).__init__()
 
